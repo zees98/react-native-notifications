@@ -62,6 +62,7 @@
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
     content.body = [RCTConvert NSString:details[@"body"]];
     content.title = [RCTConvert NSString:details[@"title"]];
+    NSNumber * badge = [RCTConvert NSNumber:details[@"badge"]]; content.badge = badge;
     content.sound = [RCTConvert NSString:details[@"sound"]]
     ? [UNNotificationSound soundNamed:[RCTConvert NSString:details[@"sound"]]]
     : [UNNotificationSound defaultSound];
